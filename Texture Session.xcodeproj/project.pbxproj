@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE4466E79FD155F8C9B7771 /* Pods_Texture_Session.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BA42DB46D45060E90A47C8 /* Pods_Texture_Session.framework */; };
 		E530C78C22D5CA1A003098F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530C78B22D5CA1A003098F3 /* AppDelegate.swift */; };
 		E530C78E22D5CA1A003098F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530C78D22D5CA1A003098F3 /* ViewController.swift */; };
 		E530C79122D5CA1A003098F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E530C78F22D5CA1A003098F3 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A44D8AAD5D56D1FF148FEB42 /* Pods-Texture Session.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Texture Session.debug.xcconfig"; path = "Target Support Files/Pods-Texture Session/Pods-Texture Session.debug.xcconfig"; sourceTree = "<group>"; };
+		D6F000E609229394F19196B7 /* Pods-Texture Session.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Texture Session.release.xcconfig"; path = "Target Support Files/Pods-Texture Session/Pods-Texture Session.release.xcconfig"; sourceTree = "<group>"; };
+		E2BA42DB46D45060E90A47C8 /* Pods_Texture_Session.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Texture_Session.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E530C78822D5CA1A003098F3 /* Texture Session.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Texture Session.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E530C78B22D5CA1A003098F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E530C78D22D5CA1A003098F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE4466E79FD155F8C9B7771 /* Pods_Texture_Session.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		511BA64C3DB162539A3A6B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2BA42DB46D45060E90A47C8 /* Pods_Texture_Session.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E8084660BABD3D9BF7BC948 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A44D8AAD5D56D1FF148FEB42 /* Pods-Texture Session.debug.xcconfig */,
+				D6F000E609229394F19196B7 /* Pods-Texture Session.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E530C77F22D5CA1A003098F3 = {
 			isa = PBXGroup;
 			children = (
 				E530C78A22D5CA1A003098F3 /* Texture Session */,
 				E530C78922D5CA1A003098F3 /* Products */,
+				9E8084660BABD3D9BF7BC948 /* Pods */,
+				511BA64C3DB162539A3A6B4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E530C79A22D5CA1C003098F3 /* Build configuration list for PBXNativeTarget "Texture Session" */;
 			buildPhases = (
+				7308C2229ABBA48FE23DCC0B /* [CP] Check Pods Manifest.lock */,
 				E530C78422D5CA1A003098F3 /* Sources */,
 				E530C78522D5CA1A003098F3 /* Frameworks */,
 				E530C78622D5CA1A003098F3 /* Resources */,
+				AA0F1233252B67A50FBBF466 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7308C2229ABBA48FE23DCC0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Texture Session-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA0F1233252B67A50FBBF466 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Texture Session/Pods-Texture Session-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Texture Session/Pods-Texture Session-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Texture Session/Pods-Texture Session-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E530C78422D5CA1A003098F3 /* Sources */ = {
@@ -280,6 +349,7 @@
 		};
 		E530C79B22D5CA1C003098F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A44D8AAD5D56D1FF148FEB42 /* Pods-Texture Session.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +367,7 @@
 		};
 		E530C79C22D5CA1C003098F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6F000E609229394F19196B7 /* Pods-Texture Session.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

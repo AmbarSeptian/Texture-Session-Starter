@@ -1,0 +1,6 @@
+framework module Pods_Texture_Session {
+  umbrella header "Pods-Texture Session-umbrella.h"
+
+  export *
+  module * { export * }
+}
