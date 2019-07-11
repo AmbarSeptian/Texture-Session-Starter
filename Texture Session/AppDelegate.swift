@@ -22,8 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         // Create and set rootViewController
+        
         let viewController = TextureViewController()
-        window.rootViewController = viewController
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.isTranslucent = false
+        
+        window.rootViewController = navigationController
         
         return true
     }

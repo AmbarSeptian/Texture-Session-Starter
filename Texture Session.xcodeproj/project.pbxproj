@@ -13,6 +13,7 @@
 		E530C79622D5CA1C003098F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E530C79422D5CA1C003098F3 /* LaunchScreen.storyboard */; };
 		E530C79E22D5D4B7003098F3 /* UIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530C79D22D5D4B7003098F3 /* UIKitViewController.swift */; };
 		E530C7A722D64BA2003098F3 /* TextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530C7A622D64BA2003098F3 /* TextureViewController.swift */; };
+		E5EAEAB622D7A97900E6C43C /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EAEAB522D7A97900E6C43C /* StackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E530C79722D5CA1C003098F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E530C79D22D5D4B7003098F3 /* UIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitViewController.swift; sourceTree = "<group>"; };
 		E530C7A622D64BA2003098F3 /* TextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureViewController.swift; sourceTree = "<group>"; };
+		E5EAEAB522D7A97900E6C43C /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				E530C78B22D5CA1A003098F3 /* AppDelegate.swift */,
 				E530C7A622D64BA2003098F3 /* TextureViewController.swift */,
 				E530C79D22D5D4B7003098F3 /* UIKitViewController.swift */,
+				E5EAEAB522D7A97900E6C43C /* StackViewController.swift */,
 				E530C79222D5CA1C003098F3 /* Assets.xcassets */,
 				E530C79422D5CA1C003098F3 /* LaunchScreen.storyboard */,
 				E530C79722D5CA1C003098F3 /* Info.plist */,
@@ -204,6 +207,7 @@
 			files = (
 				E530C78C22D5CA1A003098F3 /* AppDelegate.swift in Sources */,
 				E530C79E22D5D4B7003098F3 /* UIKitViewController.swift in Sources */,
+				E5EAEAB622D7A97900E6C43C /* StackViewController.swift in Sources */,
 				E530C7A722D64BA2003098F3 /* TextureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

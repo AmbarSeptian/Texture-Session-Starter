@@ -18,14 +18,15 @@ class TextureViewController: ASViewController<ASDisplayNode> {
         super.init(node: rootNode)
         
 
-        // configure simple node
-//        let simpleNode = ASDisplayNode()
-//        simpleNode.backgroundColor = UIColor.green
-//        simpleNode.cornerRadius = 12
-//        simpleNode.frame = CGRect(x: 20, y: 20, width: 100, height: 100)
-//        rootNode.addSubnode(simpleNode)
+        // Create sub node
+        let subnode = ASDisplayNode()
+        subnode.frame = CGRect(x: 20, y: 20, width: 200, height: 200)
+        subnode.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         
-//
+        // add the subnode that we have made
+//        rootNode.addSubnode(subnode)
+        
+
         let addressNode = AddressNode()
         let thumbnailNode = ThumbnailImageNode()
 
@@ -51,7 +52,7 @@ class TextureViewController: ASViewController<ASDisplayNode> {
 
 
 class AddressNode: ASDisplayNode {
-    // create
+    
     private let placeNameTextNode = ASTextNode()
     private let cityNameTextNode = ASTextNode()
     private let etaTextNode = ASTextNode()
@@ -104,7 +105,7 @@ class AddressNode: ASDisplayNode {
                                                 alignItems: .center,
                                                 children: [nameStackLayout, etaTextNode])
         
-        let insets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        let insets = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
         return ASInsetLayoutSpec(insets: insets, child: addressLayout)
     }
 }
@@ -147,6 +148,7 @@ class ThumbnailImageNode: ASDisplayNode {
     @objc func changeButtonTapped() {
         let newImageURL = URL(string: "https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg")
         imageNode.url = newImageURL
+        imageNode.frame.origin = CGPoint(x: 100, y: 100)
     }
     
 }

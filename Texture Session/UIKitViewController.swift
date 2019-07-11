@@ -15,8 +15,8 @@ class UIKitViewController: UIViewController {
         view.backgroundColor = .white
         
         let subview = UIView()
-        subview.frame = CGRect(x: 100, y: 100, width: 200, height: 100)
-        subview.backgroundColor = #colorLiteral(red: 0.6349999905, green: 0.8119999766, blue: 0.3880000114, alpha: 1)
+        subview.frame = CGRect(x: 20, y: 20, width: 200, height: 200)
+        subview.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         view.addSubview(subview)
     }
 }
