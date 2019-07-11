@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TextureViewController.swift
 //  Texture Session
 //
 //  Created by Ambar Septian on 10/07/19.
@@ -8,11 +8,7 @@
 
 import AsyncDisplayKit
 
-class ViewController: ASViewController<ASDisplayNode> {
-    
-    private let simpleNode = ASDisplayNode()
-    private let addressNode = AddressNode()
-    private let thumbnailNode = ThumbnailImageNode()
+class TextureViewController: ASViewController<ASDisplayNode> {
     
     init() {
         // Create RootNode for ViewController
@@ -21,16 +17,21 @@ class ViewController: ASViewController<ASDisplayNode> {
         rootNode.automaticallyManagesSubnodes = true
         super.init(node: rootNode)
         
+
         // configure simple node
-        simpleNode.backgroundColor = UIColor.green
-        simpleNode.cornerRadius = 12
-        simpleNode.frame = CGRect(x: 20, y: 20, width: 100, height: 100)
-        
+//        let simpleNode = ASDisplayNode()
+//        simpleNode.backgroundColor = UIColor.green
+//        simpleNode.cornerRadius = 12
+//        simpleNode.frame = CGRect(x: 20, y: 20, width: 100, height: 100)
 //        rootNode.addSubnode(simpleNode)
         
+//
+        let addressNode = AddressNode()
+        let thumbnailNode = ThumbnailImageNode()
+
         rootNode.layoutSpecBlock = { _, constrainedSize in
-            let children = [self.addressNode, self.thumbnailNode]
-            
+            let children = [addressNode, thumbnailNode]
+
             return ASStackLayoutSpec(direction: .vertical,
                                      spacing: 20,
                                      justifyContent: .start,
@@ -45,7 +46,6 @@ class ViewController: ASViewController<ASDisplayNode> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isTranslucent = false
     }
 }
 
@@ -68,18 +68,22 @@ class AddressNode: ASDisplayNode {
         let placeNameText = NSAttributedString(string: "Tokopedia Tower",
                             attributes: [
                                 .font: UIFont.systemFont(ofSize: 20),
-                                .foregroundColor: UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1) ]
+                                .foregroundColor: #colorLiteral(red: 0.1607843137, green: 0.5019607843, blue: 0.7254901961, alpha: 1)
+            ]
         )
+        
         let cityNameText = NSAttributedString(string: "Jakarta",
                             attributes: [
                                 .font: UIFont.boldSystemFont(ofSize: 22),
-                                .foregroundColor: UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1) ]
+                                .foregroundColor: #colorLiteral(red: 0.9450980392, green: 0.768627451, blue: 0.05882352941, alpha: 1)
+            ]
         )
         
         let etaNameText = NSAttributedString(string: "10m",
                             attributes: [
                                 .font: UIFont.systemFont(ofSize: 18),
-                                .foregroundColor: UIColor(red: 149/255, green: 165/255, blue: 166/255, alpha: 1) ]
+                                .foregroundColor: #colorLiteral(red: 0.5843137255, green: 0.6470588235, blue: 0.6509803922, alpha: 1)
+            ]
         )
         
         placeNameTextNode.attributedText = placeNameText
@@ -109,20 +113,15 @@ class AddressNode: ASDisplayNode {
 class ThumbnailImageNode: ASDisplayNode {
     private let imageNode = ASNetworkImageNode()
     private let buttonNode = ASButtonNode()
-    private let imagesURL = [
-        URL(string: "https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"),
-        URL(string: "https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg"),
-        URL(string: "https://images.pexels.com/photos/1666021/pexels-photo-1666021.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-        ]
-    private var currentIndexImage = 0
-    
+   
     override init() {
         super.init()
        
         automaticallyManagesSubnodes = true
         
         // Setup image
-        imageNode.url = imagesURL[currentIndexImage]
+        let imageURL = URL(string: "https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+        imageNode.url = imageURL
         
         // Setup Button Title & Target
         let buttonTitle = NSAttributedString(string: "Change",
@@ -132,8 +131,6 @@ class ThumbnailImageNode: ASDisplayNode {
         )
         buttonNode.setAttributedTitle(buttonTitle, for: .normal)
         buttonNode.addTarget(self, action: #selector(self.changeButtonTapped), forControlEvents: .touchUpInside)
-        
-        
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -148,13 +145,9 @@ class ThumbnailImageNode: ASDisplayNode {
     }
     
     @objc func changeButtonTapped() {
-        if currentIndexImage == imagesURL.count - 1 {
-            currentIndexImage = 0
-        } else {
-            currentIndexImage += 1
-        }
-        
-        imageNode.url = imagesURL[currentIndexImage]
+        let newImageURL = URL(string: "https://cdn.pixabay.com/photo/2017/12/17/19/08/away-3024773_960_720.jpg")
+        imageNode.url = newImageURL
     }
     
 }
+
