@@ -21,13 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        // Create and set rootViewController
+        // Create ViewController
+        let viewController = UIKitViewController()
         
-        let viewController = TextureViewController()
-        
+         // Create and setup NavigationController
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isTranslucent = false
         
+        // Set UIWindow's rootViewController
         window.rootViewController = navigationController
         
         return true
